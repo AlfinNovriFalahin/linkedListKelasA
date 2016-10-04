@@ -30,10 +30,18 @@ class LinkedList{
         this.tail = null;
     }
     public void push(Node newNode){ // 5 orang
-        // TODO: write the code, add newNode
+       if(head == null && tail == null){ // empty linked list
+            head = newNode;
+            tail = newNode;
+        }else{ // non-empty linked list
+            tail.next     = newNode;
+            newNode.prev = tail;
+            tail          = newNode;
+        }
     }
     public Node qpop(){ // 5 orang
-        // TODO: write the code, pop node (queue), return it
+        Node temp = head;
+        head = head.next;
         return null;
     }
     public Node spop(){ // 5 orang
@@ -41,7 +49,19 @@ class LinkedList{
         return null;
     }
     public void insert(Node newNode, Node position){ // 6 orang
-        // TODO: insert newNode after position
+       
+           if(head==null){  
+                  head=newNode;  
+                  return;
+           }
+           
+           Node tempNode = head; // 
+           while(tempNode.next!=null){ 
+                                                           
+                  tempNode=tempNode.next; 
+           }
+           tempNode.next=newNode;  
+    
     }
     public void delete(Node position){ // 6 orang
         // TODO: delete Node position from linked list
